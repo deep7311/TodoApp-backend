@@ -11,6 +11,13 @@ const app = express();
 const dbuser = encodeURIComponent(process.env.DB_USER);
 const dbpass = encodeURIComponent(process.env.DB_PASS);
 
+// mongoose.connect("mongodb://localhost:27017/todoApplication").then(() => {
+//   console.log("Connected to MongoDB");
+//   app.listen(3000, () => {
+//     console.log("Server started at Port 3000");
+//   });
+// });
+
 mongoose.connect(`mongodb+srv://${dbuser}:${dbpass}@cluster0.iitm5oq.mongodb.net/todoApp?retryWrites=true&w=majority&appName=Cluster0`).then(() => {
   console.log("Connected to MongoDB");
   app.listen(8080, () => {
